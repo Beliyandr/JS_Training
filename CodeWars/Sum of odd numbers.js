@@ -22,5 +22,6 @@ function rowSumOddNumbers(n) {
     sum = sum + firstNumber + 2 * i;
   }
   return sum;
+  //   return n * n * n;
 }
-console.log(rowSumOddNumbers(42));
+console.log(rowSumOddNumbers(5));
