@@ -103,21 +103,13 @@ lastNameLength = lastName.length;
 lastNameLength = 8;
 
 
+//Word Blanks
 
-function findOdd(A) {
-  for (let i = 0; i <= A.length; i++) {
-    let num = 0;
-    for (let j = A.length - 1; j >= 0; j--) {
-      if (A[i] === A[j]) {
-        num += 1;
-      }
-    }
-    if (num % 2 > 0) {
-      return A[i]
-    } else {
-      num = 0;
-    }
-  }
-}
+var myNoun = "dog";
+var myAdjective = "big";
+var myVerb = "ran";
+var myAdverb = "quickly";
 
-findOdd([20,1,-1,2,-2,3,3,5,5,1,2,4,20,4,-1,-2,5]);
+// Only change code below this line
+var wordBlanks = myNoun + ',' + myVerb + ',' + myAdjective + ',' + 'or' +  ' ' + myAdverb;
+console.log(wordBlanks);
