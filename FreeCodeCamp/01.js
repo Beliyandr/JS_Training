@@ -48,6 +48,7 @@ printManyTimes("freeCodeCamp");
 // 3.Mutate an Array Declared with const
 
 const s = [5, 7, 2];
+
 function editInPlace() {
   s[0] = 2;
   s[1] = 5;
@@ -78,3 +79,45 @@ function freezeObj() {
   return MATH_CONSTANTS.PI;
 }
 const PI = freezeObj();
+
+
+//Concatenating Strings with the Plus Equals Operator
+var myStr = 'This is the first sentence. ';
+myStr += 'This is the second sentence.';
+
+//Constructing Strings with Variables
+var myName = 'Andrey';
+var myStr = 'My name is' + myName + 'and I am well!'
+
+//Appending Variables to Strings
+var someAdjective = 'JS HTML CSS';
+var myStr = "Learning to code is ";
+myStr += someAdjective;
+
+//Find the Length of a String
+// Setup
+var lastNameLength = 0;
+var lastName = "Lovelace";
+
+lastNameLength = lastName.length;
+lastNameLength = 8;
+
+
+
+function findOdd(A) {
+  for (let i = 0; i <= A.length; i++) {
+    let num = 0;
+    for (let j = A.length - 1; j >= 0; j--) {
+      if (A[i] === A[j]) {
+        num += 1;
+      }
+    }
+    if (num % 2 > 0) {
+      return A[i]
+    } else {
+      num = 0;
+    }
+  }
+}
+
+findOdd([20,1,-1,2,-2,3,3,5,5,1,2,4,20,4,-1,-2,5]);
