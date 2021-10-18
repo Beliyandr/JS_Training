@@ -136,3 +136,35 @@ var myArray = [['123',324], ['sam',555]];
 var myArray = [50,60,70];
 var myData = myArray[0];
 console.log(myData)
+
+
+//!Manipulate Arrays With push()
+// var arr1 = [1,2,3];
+// arr1.push(4);
+
+// var arr2 = ["Stimpson", "J", "cat"];
+// arr2.push(["happy", "joy"]);
+// arr1 now has the value [1, 2, 3, 4] and arr2 has the value ["Stimpson", "J", "cat", ["happy", "joy"]]
+var myArray = [["John", 23], ["cat", 2]];
+myArray.push(["dog", 3])
+
+//!Manipulate Arrays With pop()
+// Another way to change the data in an array is with the .pop() function.
+
+// .pop() is used to pop a value off of the end of an array. We can store this popped off value by assigning it to a variable. In other words, .pop() removes the last element from an array and returns that element.
+
+// Any type of entry can be popped off of an array - numbers, strings, even nested arrays.
+
+// var threeArr = [1, 4, 6];
+// var oneDown = threeArr.pop();
+// console.log(oneDown);
+// console.log(threeArr);
+// The first console.log will display the value 6, and the second will display the value [1, 4].
+
+// Use the .pop() function to remove the last item from myArray, assigning the popped off value to removedFromMyArray.
+
+// Setup
+var myArray = [["John", 23], ["cat", 2]];
+
+// Only change code below this line
+var removedFromMyArray = myArray.pop();
