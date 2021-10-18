@@ -113,3 +113,26 @@ var myAdverb = "quickly";
 // Only change code below this line
 var wordBlanks = myNoun + ',' + myVerb + ',' + myAdjective + ',' + 'or' +  ' ' + myAdverb;
 console.log(wordBlanks);
+
+
+//Store Multiple Values in one Variable using JavaScript Arrays
+
+// myArray should be an array.
+
+// Passed
+// The first item in myArray should be a string.
+
+// Passed
+// The second item in myArray should be a number.
+
+var myArray = ['sc', 3];
+
+//!Nest one Array within Another Array
+// myArray should have at least one array nested within another array.
+var myArray = [['123',324], ['sam',555]];
+
+
+//!Access Array Data with Indexes
+var myArray = [50,60,70];
+var myData = myArray[0];
+console.log(myData)
