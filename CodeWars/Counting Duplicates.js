@@ -10,6 +10,18 @@
 // "aA11" -> 2 # 'a' and '1'
 // "ABBA" -> 2 # 'A' and 'B' each occur twice
 
-function duplicateCount(text){
-  //...
+function duplicateCount(text) {
+  if (text.length < 2) {
+    return 0;
+  }
+  let newText = text.toLowerCase().split('');
+  let count = 0;
+  newText.map((item, i, arr) => {
+    
+
+  });
+  return count;
 }
+
+
+console.log(duplicateCount("sdfgdsggggggggg"));
