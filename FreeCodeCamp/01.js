@@ -191,3 +191,11 @@ myArray.unshift(['Paul',35]);
 //!Shopping List
 var myList = [['choco', 15], ['cofe', 20],['milk', 11],['tea', 33],['water', 1] ];
 
+
+// Write Reusable JavaScript with Functions
+
+function reusableFunction (){
+  console.log('Hi World')
+}
+
+reusableFunction ();
