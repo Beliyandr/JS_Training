@@ -15,13 +15,24 @@ function duplicateCount(text) {
     return 0;
   }
   let newText = text.toLowerCase().split('');
-  let count = 0;
-  newText.map((item, i, arr) => {
-    
+  let count = [];
 
-  });
-  return count;
+  for (let i = 0; i <= newText.length; i++) {
+    for (let j = 1; j <= newText.length; j++) {
+      if (newText[0] === newText[j]) {
+        if (!count.includes(newText[0])) {
+          count.push(newText[0]);
+        }
+        newText.splice(newText[j], 1);
+        j--;
+      }
+    }
+    newText.splice(newText[0], 1);
+
+  }
+
+  return count.length;
 }
 
 
-console.log(duplicateCount("sdfgdsggggggggg"));
+console.log(duplicateCount("Indivisibilities"));
