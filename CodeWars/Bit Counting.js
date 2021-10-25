@@ -9,13 +9,17 @@ let countBits = function (n) {
   } else if (n === 1) {
     return 1;
   }
-  while (n > 1) {
+  while (n >= 1) {
+    if (n == 1) {
+      count++;
+      return count;
+    }
     if (n % 2 !== 0) {
       count++;
     }
-    n = Math.round(n / 2);
+    n = Math.floor(n / 2);
   }
   return count;
 };
 
-console.log(countBits(0));
+console.log(countBits(9));
