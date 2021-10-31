@@ -6,3 +6,12 @@
 // uniqueInOrder('ABBCcAD')         == ['A', 'B', 'C', 'c', 'A', 'D']
 // uniqueInOrder([1,2,2,3,3])       == [1,2,3]
 
+let uniqueInOrder = function (iterable) {
+
+  iterable.split('').filter((item) => {
+    return (item != 'a')
+  })
+
+}
+
+console.log(uniqueInOrder('AAAABBBCCDAABBB'));
