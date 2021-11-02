@@ -6,12 +6,28 @@
 // uniqueInOrder('ABBCcAD')         == ['A', 'B', 'C', 'c', 'A', 'D']
 // uniqueInOrder([1,2,2,3,3])       == [1,2,3]
 
-let uniqueInOrder = function (iterable) {
+// let uniqueInOrder = function (iterable) {
 
-  iterable.split('').filter((item) => {
-    return (item != 'a')
-  })
+//   let a = iterable.split('');
 
-}
+//   a.filter(item => item == 'A')
 
-console.log(uniqueInOrder('AAAABBBCCDAABBB'));
+// }
+
+// console.log(uniqueInOrder('AAAABBBCCDAABBB'));
+
+
+
+// var uniqueInOrder = function (iterable) {
+//   let chars = [];
+
+//   for (let i = 0; i < iterable.length; i++) {
+//     if (iterable[i] !== iterable[i + 1]) {
+//       chars.push(iterable[i]);
+//     }
+//   }
+//   return chars
+
+// }
+
+// console.log(uniqueInOrder('AAAABBBCCDAABBBbBbB'));
