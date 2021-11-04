@@ -587,3 +587,130 @@ function testGreaterOrEqual(val) {
 }
 
 testGreaterOrEqual(10);
+
+
+// Comparison with the Less Than Operator
+// The less than operator (<) compares the values of two numbers. If the number to the left is less than the number to the right, it returns true. Otherwise, it returns false. Like the equality operator, the less than operator converts data types while comparing.
+
+// Examples
+
+// 2   < 5
+// '3' < 7
+// 5   < 5
+// 3   < 2
+// '8' < 4
+// In order, these expressions would evaluate to true, true, false, false, and false.
+
+function testLessThan(val) {
+  if (val < 25) { // Change this line
+    return "Under 25";
+  }
+
+  if (val < 55) { // Change this line
+    return "Under 55";
+  }
+
+  return "55 or Over";
+}
+
+testLessThan(10);
+
+
+// Comparison with the Less Than Or Equal To Operator
+// The less than or equal to operator (<=) compares the values of two numbers. If the number to the left is less than or equal to the number to the right, it returns true. If the number on the left is greater than the number on the right, it returns false. Like the equality operator, the less than or equal to operator converts data types.
+
+// Examples
+
+// 4   <= 5
+// '7' <= 7
+// 5   <= 5
+// 3   <= 2
+// '8' <= 4
+// In order, these expressions would evaluate to true, true, true, false, and false.
+
+function testLessOrEqual(val) {
+  if (val <= 12) { // Change this line
+    return "Smaller Than or Equal to 12";
+  }
+
+  if (val <= 24) { // Change this line
+    return "Smaller Than or Equal to 24";
+  }
+
+  return "More Than 24";
+}
+
+testLessOrEqual(10);
+
+
+
+// Comparisons with the Logical And Operator
+// Sometimes you will need to test more than one thing at a time. The logical and operator (&&) returns true if and only if the operands to the left and right of it are true.
+
+// The same effect could be achieved by nesting an if statement inside another if:
+
+// if (num > 5) {
+//   if (num < 10) {
+//     return "Yes";
+//   }
+// }
+// return "No";
+// will only return Yes if num is greater than 5 and less than 10. The same logic can be written as:
+
+// if (num > 5 && num < 10) {
+//   return "Yes";
+// }
+// return "No";
+// Replace the two if statements with one statement, using the && operator, which will return the string Yes if val is less than or equal to 50 and greater than or equal to 25. Otherwise, will return the string No.
+
+function testLogicalAnd(val) {
+  // Only change code below this line
+
+  if (val >= 25 && val <= 50) {
+
+    return "Yes";
+
+  }
+
+  // Only change code above this line
+  return "No";
+}
+
+testLogicalAnd(10);
+
+
+// Comparisons with the Logical Or Operator
+// The logical or operator (||) returns true if either of the operands is true. Otherwise, it returns false.
+
+// The logical or operator is composed of two pipe symbols: (||). This can typically be found between your Backspace and Enter keys.
+
+// The pattern below should look familiar from prior waypoints:
+
+// if (num > 10) {
+//   return "No";
+// }
+// if (num < 5) {
+//   return "No";
+// }
+// return "Yes";
+// will return Yes only if num is between 5 and 10 (5 and 10 included). The same logic can be written as:
+
+// if (num > 10 || num < 5) {
+//   return "No";
+// }
+// return "Yes";
+// Combine the two if statements into one statement which returns the string Outside if val is not between 10 and 20, inclusive. Otherwise, return the string Inside.
+
+function testLogicalOr(val) {
+  // Only change code below this line
+
+  if (val > 20 || val < 10) {
+    return "Outside";
+  }
+
+
+  // Only change code above this line
+  return "Inside";
+}
+
+testLogicalOr(15);
