@@ -1120,7 +1120,7 @@ function chainToSwitch(val) {
 
 chainToSwitch(7);
 
-// Returning Boolean Values from Functions
+//! Returning Boolean Values from Functions
 // You may recall from Comparison with the Equality Operator that all comparison operators return a boolean true or false value.
 
 // Sometimes people use an if/else statement to do a comparison, like this:
@@ -1151,7 +1151,7 @@ function isLess(a, b) {
 
 isLess(10, 15);
 
-// Return Early Pattern for Functions
+//! Return Early Pattern for Functions
 // When a return statement is reached, the execution of the current function stops and control returns to the calling location.
 
 // Example
@@ -1221,7 +1221,7 @@ console.log(cc(4));
 console.log(cc("K"));
 console.log(cc("A"));
 
-// Build JavaScript Objects
+//! Build JavaScript Objects
 // You may have heard the term object before.
 
 // Objects are similar to arrays, except that instead of using indexes to access and modify their data, you access the data in objects through what are called properties.
@@ -1259,7 +1259,7 @@ const myDog = {
   // Only change code above this line
 };
 
-// Accessing Object Properties with Dot Notation
+//! Accessing Object Properties with Dot Notation
 // There are two ways to access the properties of an object: dot notation (.) and bracket notation ([]), similar to an array.
 
 // Dot notation is what you use when you know the name of the property you're trying to access ahead of time.
@@ -1288,7 +1288,7 @@ const testObj = {
 const hatValue = testObj.hat; // Change this line
 const shirtValue = testObj.shirt; // Change this line
 
-// Accessing Object Properties with Bracket Notation
+//! Accessing Object Properties with Bracket Notation
 // The second way to access the properties of an object is bracket notation ([]). If the property of the object you are trying to access has a space in its name, you will need to use bracket notation.
 
 // However, you can still use bracket notation on object properties without spaces.
@@ -1321,7 +1321,7 @@ const testObj = {
 const entreeValue = testObj["an entree"]; // Change this line
 const drinkValue = testObj["the drink"]; // Change this line
 
-// Accessing Object Properties with Variables
+//! Accessing Object Properties with Variables
 // Another use of bracket notation on objects is to access a property which is stored as the value of a variable. This can be very useful for iterating through an object's properties or when accessing a lookup table.
 
 // Here is an example of using a variable to access a property:
@@ -1366,3 +1366,97 @@ const testObj = {
 // Only change code below this line
 const playerNumber = 16; // Change this line
 const player = testObj[playerNumber]; // Change this line
+
+//! Updating Object Properties
+// After you've created a JavaScript object, you can update its properties at any time just like you would update any other variable. You can use either dot or bracket notation to update.
+
+// For example, let's look at ourDog:
+
+// const ourDog = {
+//   "name": "Camper",
+//   "legs": 4,
+//   "tails": 1,
+//   "friends": ["everything!"]
+// };
+// Since he's a particularly happy dog, let's change his name to the string Happy Camper. Here's how we update his object's name property: ourDog.name = "Happy Camper"; or ourDog["name"] = "Happy Camper"; Now when we evaluate ourDog.name, instead of getting Camper, we'll get his new name, Happy Camper.
+
+// Update the myDog object's name property. Let's change her name from Coder to Happy Coder. You can use either dot or bracket notation.
+
+// Setup
+const myDog = {
+  name: "Coder",
+  legs: 4,
+  tails: 1,
+  friends: ["freeCodeCamp Campers"],
+};
+
+myDog.name = "Happy Coder";
+
+//! Add New Properties to a JavaScript Object
+// You can add new properties to existing JavaScript objects the same way you would modify them.
+
+// Here's how we would add a bark property to ourDog:
+
+// ourDog.bark = "bow-wow";
+// or
+
+// ourDog["bark"] = "bow-wow";
+// Now when we evaluate ourDog.bark, we'll get his bark, bow-wow.
+
+// Example:
+
+// const ourDog = {
+//   "name": "Camper",
+//   "legs": 4,
+//   "tails": 1,
+//   "friends": ["everything!"]
+// };
+
+// ourDog.bark = "bow-wow";
+// Add a bark property to myDog and set it to a dog sound, such as "woof". You may use either dot or bracket notation.
+
+const myDog = {
+  name: "Happy Coder",
+  legs: 4,
+  tails: 1,
+  friends: ["freeCodeCamp Campers"],
+};
+
+myDog.bark = "bow-bow";
+
+//! Delete Properties from a JavaScript Object
+// We can also delete properties from objects like this:
+
+// delete ourDog.bark;
+// Example:
+
+// const ourDog = {
+//   "name": "Camper",
+//   "legs": 4,
+//   "tails": 1,
+//   "friends": ["everything!"],
+//   "bark": "bow-wow"
+// };
+
+// delete ourDog.bark;
+// After the last line shown above, ourDog looks like:
+
+// {
+//   "name": "Camper",
+//   "legs": 4,
+//   "tails": 1,
+//   "friends": ["everything!"]
+// }
+// Delete the tails property from myDog. You may use either dot or bracket notation.
+
+// Setup
+const myDog = {
+  name: "Happy Coder",
+  legs: 4,
+  tails: 1,
+  friends: ["freeCodeCamp Campers"],
+  bark: "woof",
+};
+
+// Only change code below this line
+delete myDog.tails;
