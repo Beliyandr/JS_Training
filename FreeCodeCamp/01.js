@@ -1460,3 +1460,263 @@ const myDog = {
 
 // Only change code below this line
 delete myDog.tails;
+
+
+//! Using Objects for Lookups
+// Objects can be thought of as a key/value storage, like a dictionary. If you have tabular data, you can use an object to lookup values rather than a switch statement or an if/else chain. This is most useful when you know that your input data is limited to a certain range.
+
+// Here is an example of a simple reverse alphabet lookup:
+
+// const alpha = {
+//   1:"Z",
+//   2:"Y",
+//   3:"X",
+//   4:"W",
+//   ...
+//   24:"C",
+//   25:"B",
+//   26:"A"
+// };
+
+// alpha[2];
+// alpha[24];
+
+// const value = 2;
+// alpha[value];
+// alpha[2] is the string Y, alpha[24] is the string C, and alpha[value] is the string Y.
+
+// Convert the switch statement into an object called lookup. Use it to look up val and assign the associated string to the result variable.
+
+// Setup
+function phoneticLookup(val) {
+  let result = "";
+
+  // Only change code below this line
+
+  const obj = {
+    'alpha': 'Adams',
+    "bravo": "Boston",
+    "charlie": "Chicago",
+    "delta": "Denver",
+    "echo": "Easy",
+    "foxtrot": "Frank"
+  }
+
+  result = obj[val];
+
+  // Only change code above this line
+  return result;
+}
+
+phoneticLookup("charlie");
+
+
+//! Testing Objects for Properties
+// Sometimes it is useful to check if the property of a given object exists or not. We can use the .hasOwnProperty(propname) method of objects to determine if that object has the given property name. .hasOwnProperty() returns true or false if the property is found or not.
+
+// Example
+
+// const myObj = {
+//   top: "hat",
+//   bottom: "pants"
+// };
+
+// myObj.hasOwnProperty("top");
+// myObj.hasOwnProperty("middle");
+// The first hasOwnProperty returns true, while the second returns false.
+
+// Modify the function checkObj to test if an object passed to the function (obj) contains a specific property (checkProp). If the property is found, return that property's value. If not, return "Not Found".
+
+function checkObj(obj, checkProp) {
+  // Only change code below this line
+  if (obj.hasOwnProperty(checkProp)) {
+    return obj[checkProp]
+  }
+  return 'Not Found';
+  // Only change code above this line
+}
+
+
+console.log(checkObj({
+  gift: "pony",
+  pet: "kitten",
+  bed: "sleigh"
+}, "gift"));
+
+
+
+// Manipulating Complex Objects
+// Sometimes you may want to store data in a flexible Data Structure. A JavaScript object is one way to handle flexible data. They allow for arbitrary combinations of strings, numbers, booleans, arrays, functions, and objects.
+
+// Here's an example of a complex data structure:
+
+// const ourMusic = [
+//   {
+//     "artist": "Daft Punk",
+//     "title": "Homework",
+//     "release_year": 1997,
+//     "formats": [ 
+//       "CD", 
+//       "Cassette", 
+//       "LP"
+//     ],
+//     "gold": true
+//   }
+// ];
+// This is an array which contains one object inside. The object has various pieces of metadata about an album. It also has a nested formats array. If you want to add more album records, you can do this by adding records to the top level array. Objects hold data in a property, which has a key-value format. In the example above, "artist": "Daft Punk" is a property that has a key of artist and a value of Daft Punk. JavaScript Object Notation or JSON is a related data interchange format used to store data.
+
+// {
+//   "artist": "Daft Punk",
+//   "title": "Homework",
+//   "release_year": 1997,
+//   "formats": [ 
+//     "CD",
+//     "Cassette",
+//     "LP"
+//   ],
+//   "gold": true
+// }
+// Note: You will need to place a comma after every object in the array, unless it is the last object in the array.
+
+// Add a new album to the myMusic array. Add artist and title strings, release_year number, and a formats array of strings.
+
+const myMusic = [{
+    "artist": "Billy Joel",
+    "title": "Piano Man",
+    "release_year": 1973,
+    "formats": [
+      "CD",
+      "8T",
+      "LP"
+    ],
+    "gold": true,
+
+  },
+  {
+    'artist': 'Joe Satriani',
+    "title": 'Time mashine',
+    "release_year": 2010,
+    'formats': [
+      'DVD',
+      'FullHD'
+    ]
+  }
+];
+
+// Accessing Nested Objects
+// The sub-properties of objects can be accessed by chaining together the dot or bracket notation.
+
+// Here is a nested object:
+
+// const ourStorage = {
+//   "desk": {
+//     "drawer": "stapler"
+//   },
+//   "cabinet": {
+//     "top drawer": { 
+//       "folder1": "a file",
+//       "folder2": "secrets"
+//     },
+//     "bottom drawer": "soda"
+//   }
+// };
+
+// ourStorage.cabinet["top drawer"].folder2;
+// ourStorage.desk.drawer;
+// ourStorage.cabinet["top drawer"].folder2 would be the string secrets, and ourStorage.desk.drawer would be the string stapler.
+
+// Access the myStorage object and assign the contents of the glove box property to the gloveBoxContents variable. Use dot notation for all properties where possible, otherwise use bracket notation.
+
+
+// Accessing Nested Objects
+// The sub-properties of objects can be accessed by chaining together the dot or bracket notation.
+
+// Here is a nested object:
+
+// const ourStorage = {
+//   "desk": {
+//     "drawer": "stapler"
+//   },
+//   "cabinet": {
+//     "top drawer": { 
+//       "folder1": "a file",
+//       "folder2": "secrets"
+//     },
+//     "bottom drawer": "soda"
+//   }
+// };
+
+// ourStorage.cabinet["top drawer"].folder2;
+// ourStorage.desk.drawer;
+// ourStorage.cabinet["top drawer"].folder2 would be the string secrets, and ourStorage.desk.drawer would be the string stapler.
+
+// Access the myStorage object and assign the contents of the glove box property to the gloveBoxContents variable. Use dot notation for all properties where possible, otherwise use bracket notation.
+
+const myStorage = {
+  "car": {
+    "inside": {
+      "glove box": "maps",
+      "passenger seat": "crumbs"
+     },
+    "outside": {
+      "trunk": "jack"
+    }
+  }
+};
+
+const gloveBoxContents = myStorage.car.inside["glove box"];
+
+console.log(gloveBoxContents);
+
+//! Accessing Nested Arrays
+// As we have seen in earlier examples, objects can contain both nested objects and nested arrays. Similar to accessing nested objects, array bracket notation can be chained to access nested arrays.
+
+// Here is an example of how to access a nested array:
+
+// const ourPets = [
+//   {
+//     animalType: "cat",
+//     names: [
+//       "Meowzer",
+//       "Fluffy",
+//       "Kit-Cat"
+//     ]
+//   },
+//   {
+//     animalType: "dog",
+//     names: [
+//       "Spot",
+//       "Bowser",
+//       "Frankie"
+//     ]
+//   }
+// ];
+
+// ourPets[0].names[1];
+// ourPets[1].names[0];
+// ourPets[0].names[1] would be the string Fluffy, and ourPets[1].names[0] would be the string Spot.
+
+// Using dot and bracket notation, set the variable secondTree to the second item in the trees list from the myPlants object.
+
+const myPlants = [
+  {
+    type: "flowers",
+    list: [
+      "rose",
+      "tulip",
+      "dandelion"
+    ]
+  },
+  {
+    type: "trees",
+    list: [
+      "fir",
+      "pine",
+      "birch"
+    ]
+  }
+];
+
+const secondTree = myPlants[1].list[1];
+
+console.log(secondTree);
