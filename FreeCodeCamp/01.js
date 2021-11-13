@@ -1461,7 +1461,6 @@ const myDog = {
 // Only change code below this line
 delete myDog.tails;
 
-
 //! Using Objects for Lookups
 // Objects can be thought of as a key/value storage, like a dictionary. If you have tabular data, you can use an object to lookup values rather than a switch statement or an if/else chain. This is most useful when you know that your input data is limited to a certain range.
 
@@ -1494,13 +1493,13 @@ function phoneticLookup(val) {
   // Only change code below this line
 
   const obj = {
-    'alpha': 'Adams',
-    "bravo": "Boston",
-    "charlie": "Chicago",
-    "delta": "Denver",
-    "echo": "Easy",
-    "foxtrot": "Frank"
-  }
+    alpha: "Adams",
+    bravo: "Boston",
+    charlie: "Chicago",
+    delta: "Denver",
+    echo: "Easy",
+    foxtrot: "Frank",
+  };
 
   result = obj[val];
 
@@ -1509,7 +1508,6 @@ function phoneticLookup(val) {
 }
 
 phoneticLookup("charlie");
-
 
 //! Testing Objects for Properties
 // Sometimes it is useful to check if the property of a given object exists or not. We can use the .hasOwnProperty(propname) method of objects to determine if that object has the given property name. .hasOwnProperty() returns true or false if the property is found or not.
@@ -1530,20 +1528,22 @@ phoneticLookup("charlie");
 function checkObj(obj, checkProp) {
   // Only change code below this line
   if (obj.hasOwnProperty(checkProp)) {
-    return obj[checkProp]
+    return obj[checkProp];
   }
-  return 'Not Found';
+  return "Not Found";
   // Only change code above this line
 }
 
-
-console.log(checkObj({
-  gift: "pony",
-  pet: "kitten",
-  bed: "sleigh"
-}, "gift"));
-
-
+console.log(
+  checkObj(
+    {
+      gift: "pony",
+      pet: "kitten",
+      bed: "sleigh",
+    },
+    "gift"
+  )
+);
 
 // Manipulating Complex Objects
 // Sometimes you may want to store data in a flexible Data Structure. A JavaScript object is one way to handle flexible data. They allow for arbitrary combinations of strings, numbers, booleans, arrays, functions, and objects.
@@ -1555,9 +1555,9 @@ console.log(checkObj({
 //     "artist": "Daft Punk",
 //     "title": "Homework",
 //     "release_year": 1997,
-//     "formats": [ 
-//       "CD", 
-//       "Cassette", 
+//     "formats": [
+//       "CD",
+//       "Cassette",
 //       "LP"
 //     ],
 //     "gold": true
@@ -1569,7 +1569,7 @@ console.log(checkObj({
 //   "artist": "Daft Punk",
 //   "title": "Homework",
 //   "release_year": 1997,
-//   "formats": [ 
+//   "formats": [
 //     "CD",
 //     "Cassette",
 //     "LP"
@@ -1580,27 +1580,20 @@ console.log(checkObj({
 
 // Add a new album to the myMusic array. Add artist and title strings, release_year number, and a formats array of strings.
 
-const myMusic = [{
-    "artist": "Billy Joel",
-    "title": "Piano Man",
-    "release_year": 1973,
-    "formats": [
-      "CD",
-      "8T",
-      "LP"
-    ],
-    "gold": true,
-
+const myMusic = [
+  {
+    artist: "Billy Joel",
+    title: "Piano Man",
+    release_year: 1973,
+    formats: ["CD", "8T", "LP"],
+    gold: true,
   },
   {
-    'artist': 'Joe Satriani',
-    "title": 'Time mashine',
-    "release_year": 2010,
-    'formats': [
-      'DVD',
-      'FullHD'
-    ]
-  }
+    artist: "Joe Satriani",
+    title: "Time mashine",
+    release_year: 2010,
+    formats: ["DVD", "FullHD"],
+  },
 ];
 
 // Accessing Nested Objects
@@ -1613,7 +1606,7 @@ const myMusic = [{
 //     "drawer": "stapler"
 //   },
 //   "cabinet": {
-//     "top drawer": { 
+//     "top drawer": {
 //       "folder1": "a file",
 //       "folder2": "secrets"
 //     },
@@ -1627,7 +1620,6 @@ const myMusic = [{
 
 // Access the myStorage object and assign the contents of the glove box property to the gloveBoxContents variable. Use dot notation for all properties where possible, otherwise use bracket notation.
 
-
 // Accessing Nested Objects
 // The sub-properties of objects can be accessed by chaining together the dot or bracket notation.
 
@@ -1638,7 +1630,7 @@ const myMusic = [{
 //     "drawer": "stapler"
 //   },
 //   "cabinet": {
-//     "top drawer": { 
+//     "top drawer": {
 //       "folder1": "a file",
 //       "folder2": "secrets"
 //     },
@@ -1653,15 +1645,15 @@ const myMusic = [{
 // Access the myStorage object and assign the contents of the glove box property to the gloveBoxContents variable. Use dot notation for all properties where possible, otherwise use bracket notation.
 
 const myStorage = {
-  "car": {
-    "inside": {
+  car: {
+    inside: {
       "glove box": "maps",
-      "passenger seat": "crumbs"
+      "passenger seat": "crumbs",
     },
-    "outside": {
-      "trunk": "jack"
-    }
-  }
+    outside: {
+      trunk: "jack",
+    },
+  },
 };
 
 const gloveBoxContents = myStorage.car.inside["glove box"];
@@ -1698,28 +1690,20 @@ console.log(gloveBoxContents);
 
 // Using dot and bracket notation, set the variable secondTree to the second item in the trees list from the myPlants object.
 
-const myPlants = [{
+const myPlants = [
+  {
     type: "flowers",
-    list: [
-      "rose",
-      "tulip",
-      "dandelion"
-    ]
+    list: ["rose", "tulip", "dandelion"],
   },
   {
     type: "trees",
-    list: [
-      "fir",
-      "pine",
-      "birch"
-    ]
-  }
+    list: ["fir", "pine", "birch"],
+  },
 ];
 
 const secondTree = myPlants[1].list[1];
 
 console.log(secondTree);
-
 
 //! Record Collection
 // You are given an object literal representing a part of your musical album collection. Each album has a unique id number as its key and several other properties. Not all albums have complete information.
@@ -1733,92 +1717,91 @@ console.log(secondTree);
 // If value is an empty string, delete the given prop property from the album.
 // Note: A copy of the recordCollection object is used for the tests.
 
-
 const recordCollection = {
   2548: {
-    albumTitle: 'Slippery When Wet',
-    artist: 'Bon Jovi',
-    tracks: ['Let It Rock', 'You Give Love a Bad Name']
+    albumTitle: "Slippery When Wet",
+    artist: "Bon Jovi",
+    tracks: ["Let It Rock", "You Give Love a Bad Name"],
   },
   2468: {
-    albumTitle: '1999',
-    artist: 'Prince',
-    tracks: ['1999', 'Little Red Corvette']
+    albumTitle: "1999",
+    artist: "Prince",
+    tracks: ["1999", "Little Red Corvette"],
   },
   1245: {
-    artist: 'Robert Palmer',
-    tracks: []
+    artist: "Robert Palmer",
+    tracks: [],
   },
   5439: {
-    albumTitle: 'ABBA Gold'
-  }
+    albumTitle: "ABBA Gold",
+  },
 };
 
 // Only change code below this line
 // Setup
 const recordCollection = {
   2548: {
-    albumTitle: 'Slippery When Wet',
-    artist: 'Bon Jovi',
-    tracks: ['Let It Rock', 'You Give Love a Bad Name']
+    albumTitle: "Slippery When Wet",
+    artist: "Bon Jovi",
+    tracks: ["Let It Rock", "You Give Love a Bad Name"],
   },
   2468: {
-    albumTitle: '1999',
-    artist: 'Prince',
-    tracks: ['1999', 'Little Red Corvette']
+    albumTitle: "1999",
+    artist: "Prince",
+    tracks: ["1999", "Little Red Corvette"],
   },
   1245: {
-    artist: 'Robert Palmer',
-    tracks: []
+    artist: "Robert Palmer",
+    tracks: [],
   },
   5439: {
-    albumTitle: 'ABBA Gold'
-  }
+    albumTitle: "ABBA Gold",
+  },
 };
 
 // Only change code below this line
 function updateRecords(records, id, prop, value) {
-  if (prop !== 'tarcks' && value !== '') {
-    records[id][prop] = value
-  } else if (prop === 'tracks') {
+  if (prop !== "tarcks" && value !== "") {
+    records[id][prop] = value;
+  } else if (prop === "tracks") {
     records[id][prop] = [value];
   }
-
 
   return records;
 }
 
-updateRecords(recordCollection, 5439, 'artist', 'ABBA');
-
-
+updateRecords(recordCollection, 5439, "artist", "ABBA");
 
 //*
 // Setup
 var recordCollection = {
   2548: {
-    albumTitle: 'Slippery When Wet',
-    artist: 'Bon Jovi',
-    tracks: ['Let It Rock', 'You Give Love a Bad Name']
+    albumTitle: "Slippery When Wet",
+    artist: "Bon Jovi",
+    tracks: ["Let It Rock", "You Give Love a Bad Name"],
   },
   2468: {
-    albumTitle: '1999',
-    artist: 'Prince',
-    tracks: ['1999', 'Little Red Corvette']
+    albumTitle: "1999",
+    artist: "Prince",
+    tracks: ["1999", "Little Red Corvette"],
   },
   1245: {
-    artist: 'Robert Palmer',
-    tracks: []
+    artist: "Robert Palmer",
+    tracks: [],
   },
   5439: {
-    albumTitle: 'ABBA Gold'
-  }
+    albumTitle: "ABBA Gold",
+  },
 };
 
 // Only change code below this line
 function updateRecords(records, id, prop, value) {
-  if (prop !== 'tracks' && value !== "") {
+  if (prop !== "tracks" && value !== "") {
     records[id][prop] = value;
-  } else if (prop === "tracks" && records[id].hasOwnProperty("tracks") === false) {
+  } else if (
+    prop === "tracks" &&
+    records[id].hasOwnProperty("tracks") === false
+  ) {
     records[id][prop] = [value];
   } else if (prop === "tracks" && value !== "") {
     records[id][prop].push(value);
@@ -1828,35 +1811,33 @@ function updateRecords(records, id, prop, value) {
   return records;
 }
 
-console.log( updateRecords(recordCollection, 5439, 'artist', 'ABBA') );
-
-
+console.log(updateRecords(recordCollection, 5439, "artist", "ABBA"));
 
 var recordCollection = {
   2548: {
-    albumTitle: 'Slippery When Wet',
-    artist: 'Bon Jovi',
-    tracks: ['Let It Rock', 'You Give Love a Bad Name']
+    albumTitle: "Slippery When Wet",
+    artist: "Bon Jovi",
+    tracks: ["Let It Rock", "You Give Love a Bad Name"],
   },
   2468: {
-    albumTitle: '1999',
-    artist: 'Prince',
-    tracks: ['1999', 'Little Red Corvette']
+    albumTitle: "1999",
+    artist: "Prince",
+    tracks: ["1999", "Little Red Corvette"],
   },
   1245: {
-    artist: 'Robert Palmer',
-    tracks: []
+    artist: "Robert Palmer",
+    tracks: [],
   },
   5439: {
-    albumTitle: 'ABBA Gold'
-  }
+    albumTitle: "ABBA Gold",
+  },
 };
 
 // Only change code below this line
 function updateRecords(records, id, prop, value) {
-  if (value === '') {
+  if (value === "") {
     delete records[id][prop];
-  } else if (prop === 'tracks') {
+  } else if (prop === "tracks") {
     records[id][prop] = records[id][prop] || []; // this is called shortcircuit evaluation, see below for explanation
     records[id][prop].push(value);
   } else {
@@ -1869,40 +1850,41 @@ function updateRecords(records, id, prop, value) {
 
 const recordCollection = {
   2548: {
-    albumTitle: 'Slippery When Wet',
-    artist: 'Bon Jovi',
-    tracks: ['Let It Rock', 'You Give Love a Bad Name']
+    albumTitle: "Slippery When Wet",
+    artist: "Bon Jovi",
+    tracks: ["Let It Rock", "You Give Love a Bad Name"],
   },
   2468: {
-    albumTitle: '1999',
-    artist: 'Prince',
-    tracks: ['1999', 'Little Red Corvette']
+    albumTitle: "1999",
+    artist: "Prince",
+    tracks: ["1999", "Little Red Corvette"],
   },
   1245: {
-    artist: 'Robert Palmer',
-    tracks: []
+    artist: "Robert Palmer",
+    tracks: [],
   },
   5439: {
-    albumTitle: 'ABBA Gold'
-  }
+    albumTitle: "ABBA Gold",
+  },
 };
 
 // Only change code below this line
 function updateRecords(records, id, prop, value) {
-  if (prop !== 'tracks' && value !== '') {
+  if (prop !== "tracks" && value !== "") {
     records[id][prop] = value;
-  }else if(prop === 'tracks' && records[id].hasOwnProperty("tracks") === false ) {
+  } else if (
+    prop === "tracks" &&
+    records[id].hasOwnProperty("tracks") === false
+  ) {
     records[id][prop] = [value];
-  } else if (prop === 'tracks' && value !== '') {
+  } else if (prop === "tracks" && value !== "") {
     records[id][prop].push(value);
-}else if (value === ''){
-  delete records[id][prop]
-}
-
+  } else if (value === "") {
+    delete records[id][prop];
+  }
 
   return records;
 }
-
 
 //!Iterate with JavaScript While Loops
 // You can run the same code multiple times by using a loop.
@@ -1922,17 +1904,15 @@ function updateRecords(records, id, prop, value) {
 
 // Add the numbers 5 through 0 (inclusive) in descending order to myArray using a while loop.
 
-
 // Setup
 const myArray = [];
 let i = 5;
-while(i>=0){
-  myArray.push(i)
+while (i >= 0) {
+  myArray.push(i);
 
-  i--
+  i--;
 }
 // Only change code below this line
-
 
 //Iterate with JavaScript For Loops
 // You can run the same code multiple times by using a loop.
@@ -1967,7 +1947,6 @@ while(i>=0){
 // }
 // // Only change code below this line
 
-
 // //Iterate Odd Numbers With a For Loop
 // For loops don't have to iterate one at a time. By changing our final-expression, we can count by even numbers.
 
@@ -1982,11 +1961,87 @@ while(i>=0){
 
 // Push the odd numbers from 1 through 9 to myArray using a for loop.
 
+// Setup
+const myArray = [];
+for (let i = 1; i < 10; i += 2) {
+  myArray.push(i);
+}
+// Only change code below this line
 
+//! Count Backwards With a For Loop
+// A for loop can also count backwards, so long as we can define the right conditions.
+
+// In order to decrement by two each iteration, we'll need to change our initialization, condition, and final expression.
+
+// We'll start at i = 10 and loop while i > 0. We'll decrement i by 2 each loop with i -= 2.
+
+// const ourArray = [];
+
+// for (let i = 10; i > 0; i -= 2) {
+//   ourArray.push(i);
+// }
+// ourArray will now contain [10, 8, 6, 4, 2]. Let's change our initialization and final expression so we can count backwards by twos to create an array of descending odd numbers.
+
+// Push the odd numbers from 9 through 1 to myArray using a for loop.
 
 // Setup
 const myArray = [];
-for(let i=1; i< 10; i+=2){
-  myArray.push(i)
+for (let i = 9; i > 0; i -= 2) {
+  myArray.push(i);
 }
 // Only change code below this line
+
+//! Iterate Through an Array with a For Loop
+// A common task in JavaScript is to iterate through the contents of an array. One way to do that is with a for loop. This code will output each element of the array arr to the console:
+
+// const arr = [10, 9, 8, 7, 6];
+
+// for (let i = 0; i < arr.length; i++) {
+//    console.log(arr[i]);
+// }
+// Remember that arrays have zero-based indexing, which means the last index of the array is length - 1. Our condition for this loop is i < arr.length, which stops the loop when i is equal to length. In this case the last iteration is i === 4 i.e. when i becomes equal to arr.length - 1 and outputs 6 to the console. Then i increases to 5, and the loop terminates because i < arr.length is false.
+
+// Declare and initialize a variable total to 0. Use a for loop to add the value of each element of the myArr array to total.
+
+// Setup
+const myArr = [2, 3, 4, 5, 6];
+let total = 0;
+for (let i = 0; i < myArr.length; i++) {
+  total += myArr[i];
+}
+
+// Only change code below this line
+
+//! Nesting For Loops
+// If you have a multi-dimensional array, you can use the same logic as the prior waypoint to loop through both the array and any sub-arrays. Here is an example:
+
+// const arr = [
+//   [1, 2], [3, 4], [5, 6]
+// ];
+
+// for (let i = 0; i < arr.length; i++) {
+//   for (let j = 0; j < arr[i].length; j++) {
+//     console.log(arr[i][j]);
+//   }
+// }
+// This outputs each sub-element in arr one at a time. Note that for the inner loop, we are checking the .length of arr[i], since arr[i] is itself an array.
+
+// Modify function multiplyAll so that it returns the product of all the numbers in the sub-arrays of arr.
+
+function multiplyAll(arr) {
+  let product = 1;
+  // Only change code below this line
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < arr[i].length; j++) {
+      product *= arr[i][j];
+    }
+  }
+  // Only change code above this line
+  return product;
+}
+
+multiplyAll([
+  [1, 2],
+  [3, 4],
+  [5, 6, 7],
+]);
