@@ -2228,3 +2228,79 @@ console.log(lookUpProfile("Kristian", "lastName"));
 //!//////////////////////////////////////////////////
 
 
+// !Generate Random Fractions with JavaScript
+// Random numbers are useful for creating random behavior.
+
+// JavaScript has a Math.random() function that generates a random decimal number between 0 (inclusive) and 1 (exclusive). Thus Math.random() can return a 0 but never return a 1.
+
+// Note: Like Storing Values with the Assignment Operator, all function calls will be resolved before the return executes, so we can return the value of the Math.random() function.
+
+function randomFraction() {
+
+  // Only change code below this line
+
+  return Math.random();
+
+  // Only change code above this line
+}
+
+
+//! Generate Random Whole Numbers with JavaScript
+// It's great that we can generate random decimal numbers, but it's even more useful if we use it to generate random whole numbers.
+
+// Use Math.random() to generate a random decimal.
+// Multiply that random decimal by 20.
+// Use another function, Math.floor() to round the number down to its nearest whole number.
+// Remember that Math.random() can never quite return a 1 and, because we're rounding down, it's impossible to actually get 20. This technique will give us a whole number between 0 and 19.
+
+// Putting everything together, this is what our code looks like:
+
+// Math.floor(Math.random() * 20);
+// We are calling Math.random(), multiplying the result by 20, then passing the value to Math.floor() function to round the value down to the nearest whole number.
+
+// Use this technique to generate and return a random whole number between 0 and 9.
+
+// Генерация случайных целых чисел с помощью JavaScript Замечательно, что мы можем генерировать случайные десятичные числа, но это еще более полезно, если мы используем его для генерации случайных целых чисел. Используйте Math.random () для генерации случайного десятичного числа. Умножьте это случайное десятичное число на 20. Используйте другую функцию, Math.floor (), чтобы округлить число до ближайшего целого. Помните, что Math.random () никогда не может полностью вернуть 1 и, поскольку мы округляем в меньшую сторону, фактически невозможно получить 20. Этот метод даст нам целое число от 0 до 19. Собираем все вместе, вот как выглядит наш код: Math.floor (Math.random () * 20); Мы вызываем Math.random (), умножаем результат на 20, а затем передаем значение в функцию Math.floor (), чтобы округлить значение до ближайшего целого числа. Используйте этот метод для генерации и возврата случайного целого числа от 0 до 9.
+
+function randomWholeNum() {
+
+  // Only change code below this line
+
+  return Math.floor(Math.random() * 10);
+}
+
+
+// !Generate Random Whole Numbers within a Range
+// Instead of generating a random whole number between zero and a given number like we did before, we can generate a random whole number that falls within a range of two specific numbers.
+
+// To do this, we'll define a minimum number min and a maximum number max.
+
+// Here's the formula we'll use. Take a moment to read it and try to understand what this code is doing:
+
+// Math.floor(Math.random() * (max - min + 1)) + min
+// Create a function called randomRange that takes a range myMin and myMax and returns a random whole number that's greater than or equal to myMin, and is less than or equal to myMax, inclusive.
+
+//! Генерация случайных целых чисел в пределах диапазона Вместо генерации случайного целого числа между нулем и заданным числом, как мы делали раньше, мы можем сгенерировать случайное целое число, которое попадает в диапазон двух конкретных чисел. Для этого мы определим минимальное число min и максимальное число max. Вот формула, которую мы будем использовать. Найдите минутку, чтобы прочитать его и попытаться понять, что делает этот код: Math.floor (Math.random () * (max - min + 1)) + min Создайте функцию с именем randomRange, которая принимает диапазон myMin и myMax и возвращает случайное целое число, которое больше или равно myMin и меньше или равно myMax включительно.
+
+function randomRange(myMin, myMax) {
+  // Only change code below this line
+  return Math.floor(Math.random() * (myMax - myMin + 1)) + myMin;
+  // Only change code above this line
+}
+
+// Use the parseInt Function
+// The parseInt() function parses a string and returns an integer. Here's an example:
+
+// const a = parseInt("007");
+// The above function converts the string 007 to the integer 7. If the first character in the string can't be converted into a number, then it returns NaN.
+
+// Use parseInt() in the convertToInteger function so it converts the input string str into an integer, and returns it.
+
+
+// Используйте функцию parseInt Функция parseInt () анализирует строку и возвращает целое число. Вот пример: const a = parseInt ("007"); Вышеупомянутая функция преобразует строку 007 в целое число 7. Если первый символ в строке не может быть преобразован в число, она возвращает NaN. Используйте parseInt () в функции convertToInteger, чтобы она преобразовывала входную строку str в целое число и возвращала его.
+
+function convertToInteger(str) {
+  return parseInt(str)
+}
+
+convertToInteger("56");
