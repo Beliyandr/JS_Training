@@ -1535,8 +1535,7 @@ function checkObj(obj, checkProp) {
 }
 
 console.log(
-  checkObj(
-    {
+  checkObj({
       gift: "pony",
       pet: "kitten",
       bed: "sleigh",
@@ -1580,8 +1579,7 @@ console.log(
 
 // Add a new album to the myMusic array. Add artist and title strings, release_year number, and a formats array of strings.
 
-const myMusic = [
-  {
+const myMusic = [{
     artist: "Billy Joel",
     title: "Piano Man",
     release_year: 1973,
@@ -1690,8 +1688,7 @@ console.log(gloveBoxContents);
 
 // Using dot and bracket notation, set the variable secondTree to the second item in the trees list from the myPlants object.
 
-const myPlants = [
-  {
+const myPlants = [{
     type: "flowers",
     list: ["rose", "tulip", "dandelion"],
   },
@@ -2046,8 +2043,6 @@ multiplyAll([
   [5, 6, 7],
 ]);
 
-
-
 //! Iterate with JavaScript Do...While Loops
 // The next type of loop you will learn is called a do...while loop. It is called a do...while loop because it will first do one pass of the code inside the loop no matter what, and then continue to run the loop while the specified condition evaluates to true.
 
@@ -2060,7 +2055,7 @@ multiplyAll([
 // } while (i < 5);
 // The example above behaves similar to other types of loops, and the resulting array will look like [0, 1, 2, 3, 4]. However, what makes the do...while different from other loops is how it behaves when the condition fails on the first check. Let's see this in action: Here is a regular while loop that will run the code in the loop as long as i < 5:
 
-// const ourArray = []; 
+// const ourArray = [];
 // let i = 5;
 
 // while (i < 5) {
@@ -2069,7 +2064,7 @@ multiplyAll([
 // }
 // In this example, we initialize the value of ourArray to an empty array and the value of i to 5. When we execute the while loop, the condition evaluates to false because i is not less than 5, so we do not execute the code inside the loop. The result is that ourArray will end up with no values added to it, and it will still look like [] when all of the code in the example above has completed running. Now, take a look at a do...while loop:
 
-// const ourArray = []; 
+// const ourArray = [];
 // let i = 5;
 
 // do {
@@ -2080,12 +2075,156 @@ multiplyAll([
 
 // Change the while loop in the code to a do...while loop so the loop will push only the number 10 to myArray, and i will be equal to 11 when your code has finished running.
 
-
 const myArray = [];
 let i = 10;
 
 // Only change code below this line
-while (i < 5) {
+const myArray = [];
+let i = 10;
+
+// Only change code below this line
+do {
   myArray.push(i);
   i++;
+} while (i < 11);
+
+
+//! Replace Loops using Recursion
+// Recursion is the concept that a function can be expressed in terms of itself. To help understand this, start by thinking about the following task: multiply the first n elements of an array to create the product of those elements. Using a for loop, you could do this:
+
+//   function multiply(arr, n) {
+//     let product = 1;
+//     for (let i = 0; i < n; i++) {
+//       product *= arr[i];
+//     }
+//     return product;
+//   }
+// However, notice that multiply(arr, n) == multiply(arr, n - 1) * arr[n - 1]. That means you can rewrite multiply in terms of itself and never need to use a loop.
+
+//   function multiply(arr, n) {
+//     if (n <= 0) {
+//       return 1;
+//     } else {
+//       return multiply(arr, n - 1) * arr[n - 1];
+//     }
+//   }
+// The recursive version of multiply breaks down like this. In the base case, where n <= 0, it returns 1. For larger values of n, it calls itself, but with n - 1. That function call is evaluated in the same way, calling multiply again until n <= 0. At this point, all the functions can return and the original multiply returns the answer.
+
+// Note: Recursive functions must have a base case when they return without calling the function again (in this example, when n <= 0), otherwise they can never finish executing.
+
+// Write a recursive function, sum(arr, n), that returns the sum of the first n elements of an array arr.
+
+
+
+// function multiply(arr, n) {
+//   let product = 1;
+//   for (let i = 0; i < n; i++) {
+//     product *= arr[i];
+//   }
+//   return product;
+// }
+// However, notice that multiply(arr, n) == multiply(arr, n - 1) * arr[n - 1]. That means you can rewrite multiply in terms of itself and never need to use a loop.
+
+function multiply(arr, n) {
+  if (n <= 0) {
+    return 1;
+  } else {
+    return multiply(arr, n - 1) * arr[n - 1];
+  }
 }
+
+
+
+// function multiply(arr, n) {
+//   let product = 1;
+//   for (let i = 0; i < n; i++) {
+//     product *= arr[i];
+//   }
+//   return product;
+// }
+
+// console.log(multiply([2, 3, 4, 5], 3));
+// However, notice that multiply(arr, n) == multiply(arr, n - 1) * arr[n - 1]. That means you can rewrite multiply in terms of itself and never need to use a loop.
+
+function multiply(arr, n) {
+  if (n <= 0) {
+    return 1;
+  } else {
+    let a = multiply(arr, n - 1) * arr[n - 1];
+    // return multiply(arr, n - 1) * arr[n - 1];
+    console.log(a);
+    return a;
+  }
+}
+
+console.log(multiply([2, 3, 4, 5], 3));
+
+function sum(arr, n) {
+  // Only change code below this line
+  if (n <= 0) {
+    return 0;
+  } else {
+    return sum(arr, n - 1) + arr[n - 1]
+  }
+  // Only change code above this line
+}
+
+
+//! Profile Lookup
+// We have an array of objects representing different people in our contacts lists.
+
+// A lookUpProfile function that takes name and a property (prop) as arguments has been pre-written for you.
+
+// The function should check if name is an actual contact's firstName and the given property (prop) is a property of that contact.
+
+// If both are true, then return the "value" of that property.
+
+// If name does not correspond to any contacts then return the string No such contact.
+
+// If prop does not correspond to any valid properties of a contact found to match name then return the string No such property.
+
+// У нас есть массив объектов, представляющих разных людей в наших списках контактов. Функция lookUpProfile, которая принимает имя и свойство (свойство) в качестве аргументов, была заранее написана для вас. Функция должна проверять, является ли имя фактическим именем контакта, а данное свойство (опора) является свойством этого контакта. Если оба верны, то верните «значение» этого свойства. Если имя не соответствует ни одному контакту, верните строку Нет такого контакта. Если свойство не соответствует каким-либо действительным свойствам контакта, найденного для соответствия имени, тогда верните строку Нет такого свойства.
+
+const contacts = [{
+    firstName: "Akira",
+    lastName: "Laine",
+    number: "0543236543",
+    likes: ["Pizza", "Coding", "Brownie Points"],
+  },
+  {
+    firstName: "Harry",
+    lastName: "Potter",
+    number: "0994372684",
+    likes: ["Hogwarts", "Magic", "Hagrid"],
+  },
+  {
+    firstName: "Sherlock",
+    lastName: "Holmes",
+    number: "0487345643",
+    likes: ["Intriguing Cases", "Violin"],
+  },
+  {
+    firstName: "Kristian",
+    lastName: "Vos",
+    number: "unknown",
+    likes: ["JavaScript", "Gaming", "Foxes"],
+  },
+];
+
+function lookUpProfile(name, prop) {
+  // Only change code below this line
+  for (let i = 0; i < contacts.length; i++) {
+
+    if (contacts[i].firstName === name) {
+      return contacts[i][prop] || "No such property"
+    }
+  }
+  return 'No such contact'
+
+}
+
+console.log(lookUpProfile("Kristian", "lastName"));
+
+//!//////////////////////////////////////////////////
+
+
