@@ -1,0 +1,7 @@
+# folder video
+Video_Lessons/
+/Video_Lessons
+*.mp4
+/node_modules
+node_modules/
+*.pdf
