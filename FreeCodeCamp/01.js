@@ -2300,7 +2300,212 @@ function randomRange(myMin, myMax) {
 // Используйте функцию parseInt Функция parseInt () анализирует строку и возвращает целое число. Вот пример: const a = parseInt ("007"); Вышеупомянутая функция преобразует строку 007 в целое число 7. Если первый символ в строке не может быть преобразован в число, она возвращает NaN. Используйте parseInt () в функции convertToInteger, чтобы она преобразовывала входную строку str в целое число и возвращала его.
 
 function convertToInteger(str) {
-  return parseInt(str)
+  return parseInt(str, 2)
 }
 
 convertToInteger("56");
+
+
+//! Use the Conditional (Ternary) Operator
+// The conditional operator, also called the ternary operator, can be used as a one line if-else expression.
+
+// The syntax is a ? b : c, where a is the condition, b is the code to run when the condition returns true, and c is the code to run when the condition returns false.
+
+// The following function uses an if/else statement to check a condition:
+
+// function findGreater(a, b) {
+//   if(a > b) {
+//     return "a is greater";
+//   }
+//   else {
+//     return "b is greater or equal";
+//   }
+// }
+// This can be re-written using the conditional operator:
+
+// function findGreater(a, b) {
+//   return a > b ? "a is greater" : "b is greater or equal";
+// }
+// Use the conditional operator in the checkEqual function to check if two numbers are equal or not. The function should return either the string Equal or the string Not Equal.
+
+
+function checkEqual(a, b) {
+  return (
+    (a > b) ? "Not Equal" :
+    (a < b) ? 'Not Equal' :
+    'Equal');
+}
+
+function checkEqual(a, b) {
+  return (
+    (a > b) || (a < b) ? "Not Equal" :
+    'Equal');
+}
+
+
+console.log(checkEqual(2, -1));
+
+
+Use Multiple Conditional(Ternary) Operators
+In the previous challenge, you used a single conditional operator.You can also chain them together to check
+for multiple conditions.
+
+The following
+
+function uses
+if,
+else if, and
+else statements to check multiple conditions:
+
+  function findGreaterOrEqual(a, b) {
+    if (a === b) {
+      return "a and b are equal";
+    } else if (a > b) {
+      return "a is greater";
+    } else {
+      return "b is greater";
+    }
+  }
+
+
+//!! The above function can be re-written using multiple conditional operators:
+
+// function findGreaterOrEqual(a, b) {
+//   return (a === b) ? "a and b are equal" 
+//     : (a > b) ? "a is greater" 
+//     : "b is greater";
+// }
+// It is considered best practice to format multiple conditional operators such that each condition is on a separate line, as shown above. Using multiple conditional operators without proper indentation may make your code hard to read. For example:
+
+// function findGreaterOrEqual(a, b) {
+//   return (a === b) ? "a and b are equal" : (a > b) ? "a is greater" : "b is greater";
+// }
+// In the checkSign function, use multiple conditional operators - following the recommended format used in findGreaterOrEqual - to check if a number is positive, negative or zero. The function should return positive, negative or zero.
+
+function checkSign(num) {
+  return (num === 0) ? 'zero' :
+    (num > 0) ? 'positive' :
+    'negative'
+}
+
+console.log(checkSign(10));
+
+
+// ! Use Recursion to Create a Countdown
+// In a previous challenge, you learned how to use recursion to replace a for loop. Now, let's look at a more complex function that returns an array of consecutive integers starting with 1 through the number passed to the function.
+
+// As mentioned in the previous challenge, there will be a base case. The base case tells the recursive function when it no longer needs to call itself. It is a simple case where the return value is already known. There will also be a recursive call which executes the original function with different arguments. If the function is written correctly, eventually the base case will be reached.
+
+// For example, say you want to write a recursive function that returns an array containing the numbers 1 through n. This function will need to accept an argument, n, representing the final number. Then it will need to call itself with progressively smaller values of n until it reaches 1. You could write the function as follows:
+
+// function countup(n) {
+//   if (n < 1) {
+//     return [];
+//   } else {
+//     const countArray = countup(n - 1);
+//     countArray.push(n);
+//     return countArray;
+//   }
+// }
+// console.log(countup(5));
+// The value [1, 2, 3, 4, 5] will be displayed in the console.
+
+// At first, this seems counterintuitive since the value of n decreases, but the values in the final array are increasing. This happens because the push happens last, after the recursive call has returned. At the point where n is pushed into the array, countup(n - 1) has already been evaluated and returned [1, 2, ..., n - 1].
+
+// We have defined a function called countdown with one parameter (n). The function should use recursion to return an array containing the integers n through 1 based on the n parameter. If the function is called with a number less than 1, the function should return an empty array. For example, calling this function with n = 5 should return the array [5, 4, 3, 2, 1]. Your function must use recursion by calling itself and must not use loops of any kind.
+
+function countdown(n) {
+  if (n < 1) {
+    return [];
+  } else {
+    let countArr = countdown(n - 1);
+    countArr.unshift(n);
+    return countArr;
+  }
+
+}
+
+console.log(countdown(10))
+
+
+//! Use Recursion to Create a Range of Numbers
+// Continuing from the previous challenge, we provide you another opportunity to create a recursive function to solve a problem.
+
+// We have defined a function named rangeOfNumbers with two parameters. The function should return an array of integers which begins with a number represented by the startNum parameter and ends with a number represented by the endNum parameter. The starting number will always be less than or equal to the ending number. Your function must use recursion by calling itself and not use loops of any kind. It should also work for cases where both startNum and endNum are the same.
+
+
+function rangeOfNumbers(startNum, endNum) {
+  if (endNum - startNum < 0) {
+    return [];
+  } else {
+    let countArr = rangeOfNumbers(startNum, (endNum - 1));
+    countArr.push(endNum);
+    return countArr
+  }
+};
+
+console.log(rangeOfNumbers(1, 9));
+
+//
+
+// !Compare Scopes of the var and let KeywordsPassed
+// If you are unfamiliar with let, check out this challenge.
+
+// When you declare a variable with the var keyword, it is declared globally, or locally if declared inside a function.
+
+// The let keyword behaves similarly, but with some extra features. When you declare a variable with the let keyword inside a block, statement, or expression, its scope is limited to that block, statement, or expression.
+
+// For example:
+
+// var numArray = [];
+// for (var i = 0; i < 3; i++) {
+//   numArray.push(i);
+// }
+// console.log(numArray);
+// console.log(i);
+// Here the console will display the values [0, 1, 2] and 3.
+
+// With the var keyword, i is declared globally. So when i++ is executed, it updates the global variable. This code is similar to the following:
+
+// var numArray = [];
+// var i;
+// for (i = 0; i < 3; i++) {
+//   numArray.push(i);
+// }
+// console.log(numArray);
+// console.log(i);
+// Here the console will display the values [0, 1, 2] and 3.
+
+// This behavior will cause problems if you were to create a function and store it for later use inside a for loop that uses the i variable. This is because the stored function will always refer to the value of the updated global i variable.
+
+// var printNumTwo;
+// for (var i = 0; i < 3; i++) {
+//   if (i === 2) {
+//     printNumTwo = function() {
+//       return i;
+//     };
+//   }
+// }
+// console.log(printNumTwo());
+// Here the console will display the value 3.
+
+// As you can see, printNumTwo() prints 3 and not 2. This is because the value assigned to i was updated and the printNumTwo() returns the global i and not the value i had when the function was created in the for loop. The let keyword does not follow this behavior:
+
+// let printNumTwo;
+// for (let i = 0; i < 3; i++) {
+//   if (i === 2) {
+//     printNumTwo = function() {
+//       return i;
+//     };
+//   }
+// }
+// console.log(printNumTwo());
+// console.log(i);
+// Here the console will display the value 2, and an error that i is not defined.
+
+// i is not defined because it was not declared in the global scope. It is only declared within the for loop statement. printNumTwo() returned the correct value because three different i variables with unique values (0, 1, and 2) were created by the let keyword within the loop statement.
+
+// Fix the code so that i declared in the if statement is a separate variable than i declared in the first line of the function. Be certain not to use the var keyword anywhere in your code.
+
+// This exercise is designed to illustrate the difference between how var and let keywords assign scope to the declared variable. When programming a function similar to the one used in this exercise, it is often better to use different variable names to avoid confusion.
+
