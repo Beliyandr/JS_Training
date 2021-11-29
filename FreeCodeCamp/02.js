@@ -58,8 +58,6 @@ const magic = () => {
   return new Date();
 };
 
-
-
 //! 5 Write Arrow Functions with Parameters
 // Just like a regular function, you can pass arguments into an arrow function.
 
@@ -82,7 +80,6 @@ const myConcat = (arr1, arr2) => arr1.concat(arr2);
 
 console.log(myConcat([1, 2], [3, 4, 5]));
 
-
 //! 6 Set Default Parameters for Your Functions
 // In order to help us create more flexible functions, ES6 introduces default parameters for functions.
 
@@ -102,8 +99,6 @@ console.log(myConcat([1, 2], [3, 4, 5]));
 const increment = (number, value = 1) => number + value;
 // Only change code above this line
 
-
-
 //! 7 Use the Rest Parameter with Function Parameters
 // In order to help us create more flexible functions, ES6 introduces the rest parameter for function parameters. With the rest parameter, you can create functions that take a variable number of arguments. These arguments are stored in an array that can be accessed later from inside the function.
 
@@ -119,3 +114,68 @@ const increment = (number, value = 1) => number + value;
 // The rest parameter eliminates the need to check the args array and allows us to apply map(), filter() and reduce() on the parameters array.
 
 // Modify the function sum using the rest parameter in such a way that the function sum is able to take any number of arguments and return their sum.
+
+const sum = (...args) => {
+  return args.reduce((a, b) => a + b, 0);
+};
+
+//! 8 Use the Spread Operator to Evaluate Arrays In-Place
+// ES6 introduces the spread operator, which allows us to expand arrays and other expressions in places where multiple parameters or elements are expected.
+
+// The ES5 code below uses apply() to compute the maximum value in an array:
+
+// var arr = [6, 89, 3, 45];
+// var maximus = Math.max.apply(null, arr);
+// maximus would have a value of 89.
+
+// We had to use Math.max.apply(null, arr) because Math.max(arr) returns NaN. Math.max() expects comma-separated arguments, but not an array. The spread operator makes this syntax much better to read and maintain.
+
+// const arr = [6, 89, 3, 45];
+// const maximus = Math.max(...arr);
+// maximus would have a value of 89.
+
+// ...arr returns an unpacked array. In other words, it spreads the array. However, the spread operator only works in-place, like in an argument to a function or in an array literal. The following code will not work:
+
+// const spreaded = ...arr;
+// Copy all contents of arr1 into another array arr2 using the spread operator.
+
+const arr1 = ["JAN", "FEB", "MAR", "APR", "MAY"];
+let arr2;
+
+arr2 = [...arr1]; // Change this line
+
+console.log(arr2);
+
+//! 9  Use Destructuring Assignment to Extract Values from Objects
+// Destructuring assignment is special syntax introduced in ES6, for neatly assigning values taken directly from an object.
+
+// Consider the following ES5 code:
+
+// const user = { name: 'John Doe', age: 34 };
+
+// const name = user.name;
+// const age = user.age;
+// name would have a value of the string John Doe, and age would have the number 34.
+
+// Here's an equivalent assignment statement using the ES6 destructuring syntax:
+
+// const { name, age } = user;
+// Again, name would have a value of the string John Doe, and age would have the number 34.
+
+// Here, the name and age variables will be created and assigned the values of their respective values from the user object. You can see how much cleaner this is.
+
+// You can extract as many or few values from the object as you want.
+
+// Replace the two assignments with an equivalent destructuring assignment. It should still assign the variables today and tomorrow the values of today and tomorrow from the HIGH_TEMPERATURES object.
+
+const HIGH_TEMPERATURES = {
+  yesterday: 75,
+  today: 77,
+  tomorrow: 80,
+};
+
+// Only change code below this line
+
+const { today, tomorrow } = HIGH_TEMPERATURES;
+
+// Only change code above this line
