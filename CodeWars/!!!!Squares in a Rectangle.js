@@ -30,3 +30,4 @@ function findSquares(x,y){
 }
 
 console.log(findSquares(11,4));
+
