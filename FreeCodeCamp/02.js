@@ -290,3 +290,98 @@ function removeFirstTwo(list) {
   return arr;
 }
 const arr = removeFirstTwo(source);
+
+//! 13 Use Destructuring Assignment to Pass an Object as a Function's Parameters
+// In some cases, you can destructure the object in a function argument itself.
+
+// Consider the code below:
+// const profileUpdate = (profileData) => {
+//   const { name, age, nationality, location } = profileData;
+
+// }
+// This effectively destructures the object sent into the function. This can also be done in-place:
+
+// const profileUpdate = ({ name, age, nationality, location }) => {
+
+// }
+// When profileData is passed to the above function, the values are destructured from the function parameter for use within the function.
+
+// Use destructuring assignment within the argument to the function half to send only max and min inside the function.
+
+// Используйте назначение деструктуризации для передачи объекта в качестве параметров функции В некоторых случаях вы можете деструктурировать объект в самом аргументе функции. Рассмотрим код ниже:
+
+// const profileUpdate = (profileData) => {
+//   const { name, age, nationality, location } = profileData;
+
+// }
+// Это эффективно разрушает объект, отправленный в функцию. Это также можно сделать на месте:
+// const profileUpdate = ({ name, age, nationality, location }) => {
+
+// }
+// Когда profileData передается в указанную выше функцию, значения деструктурируются из параметра функции для использования внутри функции. Используйте деструктурирующее присвоение в аргументе функции half, чтобы отправлять только max и min внутри функции.
+
+const stats = {
+  max: 56.78,
+  standard_deviation: 4.34,
+  median: 34.54,
+  mode: 23.87,
+  min: -0.75,
+  average: 35.85,
+};
+
+// Only change code below this line
+const half = ({ max, min }) => (max + min) / 2.0;
+// Only change code above this line
+
+//! 14 Create Strings using Template Literals
+// A new feature of ES6 is the template literal. This is a special type of string that makes creating complex strings easier.
+
+// Template literals allow you to create multi-line strings and to use string interpolation features to create strings.
+
+// Consider the code below:
+
+//* Создание строк с использованием шаблонных литералов Новой особенностью ES6 является литерал шаблона. Это особый тип строки, упрощающий создание сложных строк. Литералы шаблонов позволяют создавать многострочные строки и использовать функции интерполяции строк для создания строк. Рассмотрим код ниже:
+
+// const person = {
+//   name: "Zodiac Hasbro",
+//   age: 56
+// };
+
+// const greeting = `Hello, my name is ${person.name}!
+// I am ${person.age} years old.`;
+
+// console.log(greeting);
+
+// The console will display the strings Hello, my name is Zodiac Hasbro! and I am 56 years old..
+
+// A lot of things happened there. Firstly, the example uses backticks (`), not quotes (' or "), to wrap the string. Secondly, notice that the string is multi-line, both in the code and the output. This saves inserting \n within strings. The ${variable} syntax used above is a placeholder. Basically, you won't have to use concatenation with the + operator anymore. To add variables to strings, you just drop the variable in a template string and wrap it with ${ and }. Similarly, you can include other expressions in your string literal, for example ${a + b}. This new way of creating strings gives you more flexibility to create robust strings.
+
+// Use template literal syntax with backticks to create an array of list element (li) strings. Each list element's text should be one of the array elements from the failure property on the result object and have a class attribute with the value text-warning. The makeList function should return the array of list item strings.
+
+// Use an iterator method (any kind of loop) to get the desired output (shown below).
+
+// На консоли отобразятся строки Привет, меня зовут Зодиак Хасбро! а мне 56 лет .. Там много чего произошло. Во-первых, в примере для обертывания строки используются обратные кавычки (`), а не кавычки ('или"). Во-вторых, обратите внимание, что строка является многострочной как в коде, так и в выводе. Это позволяет избежать вставки \ n внутри строк. Синтаксис $ {variable}, использованный выше, является заполнителем. По сути, вам больше не придется использовать конкатенацию с оператором +. Чтобы добавить переменные в строки, вы просто перетащите переменную в строку шаблона и оберните ее с помощью $ {и }. Точно так же вы можете включить другие выражения в свой строковый литерал, например $ {a + b}. Этот новый способ создания строк дает вам больше гибкости для создания надежных строк. Используйте синтаксис литерала шаблона с обратными кавычками, чтобы создать массив строк элементов списка (li). Текст каждого элемента списка должен быть одним из элементов массива из свойства отказа объекта результата и иметь атрибут класса со значением text-warning. Функция makeList должна возвращать массив строк элементов списка. Используйте метод итератора (любой цикл), чтобы получить желаемый результат (как показано ниже).
+
+// [
+//   '<li class="text-warning">no-var</li>',
+//   '<li class="text-warning">var-on-top</li>',
+//   '<li class="text-warning">linebreak</li>'
+// ]
+
+const result = {
+  success: ["max-length", "no-amd", "prefer-arrow-functions"],
+  failure: ["no-var", "var-on-top", "linebreak"],
+  skipped: ["no-extra-semi", "no-dup-keys"],
+};
+function makeList(arr) {
+  // Only change code below this line
+  let failureItems = [];
+  // Only change code above this line
+
+  arr.forEach((item) => {
+    failureItems.push(`<li class="text-warning">${item}</li>`);
+  });
+  return failureItems;
+}
+
+const failuresList = makeList(result.failure);
