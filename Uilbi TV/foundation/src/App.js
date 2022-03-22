@@ -52,6 +52,7 @@ function App() {
 
   const changePage = (page) => {
     setPage(page);
+    console.log(page);
   };
 
   return (
