@@ -14,7 +14,7 @@
 
 // Have fun!
 
-array = [1, -1];
+array = [1, 0, 1, -1];
 
 function pickPeaks(arr) {
   let pos = [];
@@ -23,18 +23,17 @@ function pickPeaks(arr) {
   let peak = "";
   let repeat = 0;
 
-  console.log(arr.length);
+  // if (arr[0] > arr[1]) {
+  //   peak = false;
+  // } else {
+  //   peak = true;
+  // }
 
-  if (arr[0] > arr[1]) {
-    peak = false;
-  } else {
-    peak = true;
-  }
+  // if (arr[0] >= Math.max(...arr)) {
+  //   pos.push(0);
+  //   peaks.push(arr[0]);
+  // }
 
-  if (arr[0] >= Math.max(...arr)) {
-    pos.push(0);
-    peaks.push(arr[0]);
-  }
   for (let i = 1; i < arr.length; i++) {
     if (arr[i] === start && peak) {
       if (!repeat) {
@@ -83,38 +82,3 @@ function pickPeaks(arr) {
 }
 
 console.log(pickPeaks(array));
-
-// function pickPeaks(arr) {
-//     let pos = [];
-//     let peaks = [];
-//     let start = arr[0];
-//     let peak = true;
-//     for (let i = 1; i < arr.length ; i++) {
-//       if (arr[i] === start) {
-//         continue;
-//       }
-
-//       if (arr[i] > start && peak) {
-//         start = arr[i];
-//         continue;
-//       }
-//       if (arr[i] < start && peak && i != 1) {
-//         pos.push(i - 1);
-//         peaks.push(arr[i - 1]);
-//         start = arr[i];
-//         peak = false;
-//         continue;
-//       }
-//       if (arr[i] < start && !peak) {
-//         start = arr[i];
-//         continue;
-//       }
-//       if (arr[i] > start && !peak) {
-//         start = arr[i];
-//         peak = true;
-//         continue;
-//       }
-//     }
-
-//     return { pos, peaks };
-//   }

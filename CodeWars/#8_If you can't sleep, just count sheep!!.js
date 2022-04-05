@@ -20,16 +20,27 @@ describe("Fixed tests", () => {
 
 */
 
-const countSheep = function (num) {
-  let count = [];
-  for (let i = 0; i <= num; i++) {
-    if (i !== 0) {
-      count.push(`${i} sheep...`);
-    } else {
-      count.push("");
-    }
+// const countSheep = function (num) {
+//   let count = [];
+//   for (let i = 0; i <= num; i++) {
+//     if (i !== 0) {
+//       count.push(`${i} sheep...`);
+//     } else {
+//       count.push("");
+//     }
+//   }
+//   return count.join("");
+// };
+
+// console.log(countSheep(5));
+
+let countSheep = function (num) {
+  let sheep = " sheep...";
+  let str = "";
+  for (let i = 1; i <= num; i++) {
+    str = str + i + sheep;
   }
-  return count.join("");
+  return str;
 };
 
-console.log(countSheep(5));
+console.log(countSheep(1));
