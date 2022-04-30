@@ -1,9 +1,0 @@
-{
-    "presents": [
-        ["@babel/prest-env", {
-            "targets": [
-                "last 5 versions"
-            ]
-        }]
-    ]
-}
