@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    >
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    >
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      defer
+      src="app.js"
+    ></script>
+    <script
+      defer
+      src="app2.js"
+    ></script>
+    <title>JS Array & Object</title>
+  </head>
+  <body>
+
+    <style>
+      body {
+        background-color: #2c2b2b;
+        box-sizing: border-box;
+        color: white;
+      }
+    </style>
+
+    <section class="notes">
+      <div class="container notes__wrapper">
+        <h1 class="notes__header">Заметки</h1>
+        <input
+          type="text"
+          class="form-control mb-2 notes__input input-title"
+          id="title"
+        >
+        <button
+          class="btn btn-outline-info w-100 mb-2 notes__button button-create"
+          id="create"
+        >Добавить</button>
+
+        <ul
+          class="list-group list-group-flush"
+          id="list"
+        >
+          <!-- <li
+            class="list-group-item d-flex justify-content-between align-items-center"
+          >
+            <span>Название</span>
+            <span>
+              <span class="btn btn-small btn-success">&check;</span>
+              <span class="btn btn-small btn-danger">&times;</span>
+            </span>
+          </li> -->
+
+        </ul>
+      </div>
+    </section>
+
+  </body>
+</html>
