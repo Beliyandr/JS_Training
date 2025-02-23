@@ -20,7 +20,7 @@ export const AppHeader = () => {
   const [modal, setModal] = useState(false)
   const [coin, setCoin] = useState(null)
   const { crypto } = useCrypto()
-  const [drawer, setDrawer] = useState(false)
+  const [drawer, setDrawer] = useState(true)
 
   useEffect(() => {
     const keypress = event => {
@@ -67,8 +67,8 @@ export const AppHeader = () => {
         <CoinInfoModal coin={coin} />
       </Modal>
 
-      <Drawer width={600} title="Basic Drawer" onClose={() => setDrawer(false)} open={drawer}>
-        <AddAssetForm />
+      <Drawer destroyOnClose width={600} title="Add Asset" onClose={() => setDrawer(false)} open={drawer}>
+        <AddAssetForm onClose={() => setDrawer(false)} />
       </Drawer>
 
     </Layout.Header>

@@ -1,13 +1,12 @@
 import React from 'react'
 import { Divider, Flex, Tag, Typography } from 'antd'
+import { CoinInfo } from './CoinInfo'
 
 export const CoinInfoModal = ({ coin }) => {
   return (
     <>
-      <Flex align='center'>
-        <img src={coin.icon} alt={coin.name} style={{ width: 40, marginInlineEnd: 10 }} />
-        <Typography.Title level={2} style={{ margin: 0 }} > ({coin.symbol}) {coin.name}</Typography.Title>
-      </Flex >
+      <CoinInfo coin={coin} withSymbol />
+
       <Divider />
 
       <Typography.Paragraph>
@@ -39,10 +38,12 @@ export const CoinInfoModal = ({ coin }) => {
         <Typography.Text strong>Market Cap:</Typography.Text>
         {coin.marketCap}$
       </Typography.Paragraph >
-      <Typography.Paragraph>
-        <Typography.Text strong>Contract Address:</Typography.Text>
-        {coin.contractAddress}
-      </Typography.Paragraph >
+      {coin.contractAddress &&
+        <Typography.Paragraph>
+          <Typography.Text strong>Contract Address:</Typography.Text>
+          {coin.contractAddress}
+        </Typography.Paragraph >
+      }
 
     </>
   )
