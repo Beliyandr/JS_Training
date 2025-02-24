@@ -5,7 +5,7 @@ import { CoinInfo } from './CoinInfo'
 
 export const AddAssetForm = ({ onClose }) => {
   const [form] = Form.useForm()
-  const { crypto, addAssets } = useCrypto()
+  const { crypto, addAsset } = useCrypto()
   const [coin, setCoin] = useState(null)
   const [submitted, setSubmitted] = useState(false)
   const assetRef = useRef()
@@ -66,7 +66,7 @@ export const AddAssetForm = ({ onClose }) => {
   function onFinish(values) {
     const newAsset = {
       id: coin.id,
-      amount: values.mount,
+      amount: values.amount,
       price: values.price,
       date: values.data?.$d ?? new Date
     }
@@ -75,7 +75,7 @@ export const AddAssetForm = ({ onClose }) => {
     assetRef.current = newAsset;
     setSubmitted(true)
 
-    addAssets(newAsset)
+    addAsset(newAsset)
   }
 
   function handleAmountChange(value) {

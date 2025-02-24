@@ -20,7 +20,7 @@ export const AppHeader = () => {
   const [modal, setModal] = useState(false)
   const [coin, setCoin] = useState(null)
   const { crypto } = useCrypto()
-  const [drawer, setDrawer] = useState(true)
+  const [drawer, setDrawer] = useState(false)
 
   useEffect(() => {
     const keypress = event => {
